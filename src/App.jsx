@@ -1,28 +1,25 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import AnimatedHero from './components/AnimatedHero'
+import ProjectGrid from './components/ProjectGrid'
+import ContactForm from './components/ContactForm'
+import Footer from './components/Footer'
 
-function App() {
-  const [count, setCount] = useState(0)
+function SectionDivider() {
+  return <div className="mx-auto my-6 h-px w-[90%] max-w-6xl bg-gradient-to-r from-transparent via-gray-300 to-transparent dark:via-gray-700" />
+}
 
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100">
+      <Navbar />
+      <main id="main">
+        <AnimatedHero />
+        <SectionDivider />
+        <ProjectGrid />
+        <SectionDivider />
+        <ContactForm />
+      </main>
+      <Footer />
     </div>
   )
 }
-
-export default App
